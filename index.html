@@ -1,13 +1,163 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tool-vis-project</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tool-vis-project</title>
+  <meta name="description" content="Interactive trivia dashboard showing category and difficulty distributions." />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <header>
+    <div class="container">
+      <h1>Trivia Dashboard</h1>
+
+      <div class="filter-controls">
+        <label for="categoryFilter">Filter by category:</label>
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+          <option value="Geography">Geography</option>
+          <option value="Arts">Arts</option>
+          <option value="Sports">Sports</option>
+        </select>
+        <button id="clearFilter">Clear filter</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Categories List Section -->
+    <section class="categories-section">
+      <h2>Categories</h2>
+      <div class="categories-grid">
+        <div class="category-card">
+          <h3>Science</h3>
+          <p class="count">4</p>
+          <p class="label">questions</p>
+        </div>
+        <div class="category-card">
+          <h3>History</h3>
+          <p class="count">4</p>
+          <p class="label">questions</p>
+        </div>
+        <div class="category-card">
+          <h3>Geography</h3>
+          <p class="count">4</p>
+          <p class="label">questions</p>
+        </div>
+        <div class="category-card">
+          <h3>Arts</h3>
+          <p class="count">3</p>
+          <p class="label">questions</p>
+        </div>
+        <div class="category-card">
+          <h3>Sports</h3>
+          <p class="count">3</p>
+          <p class="label">questions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Distribution Section -->
+    <section class="distribution-section">
+      <h2>Category Distribution</h2>
+      <div class="distribution-grid">
+        <div class="chart-placeholder">
+          <img src="https://c.animaapp.com/mh99d91xcxidEK/img/ai_1.png" alt="category distribution placeholder"
+            loading="lazy" />
+        </div>
+        <div class="distribution-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Count</th>
+                <th>Percent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arts</td>
+                <td>3</td>
+                <td>16.7%</td>
+              </tr>
+              <tr>
+                <td>Geography</td>
+                <td>4</td>
+                <td>22.2%</td>
+              </tr>
+              <tr>
+                <td>History</td>
+                <td>4</td>
+                <td>22.2%</td>
+              </tr>
+              <tr>
+                <td>Science</td>
+                <td>4</td>
+                <td>22.2%</td>
+              </tr>
+              <tr>
+                <td>Sports</td>
+                <td>3</td>
+                <td>16.7%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Difficulty Distribution Section -->
+    <section class="distribution-section">
+      <h2>Difficulty Distribution</h2>
+      <div class="distribution-grid">
+        <div class="chart-placeholder">
+          <img src="https://c.animaapp.com/mh99d91xcxidEK/img/ai_2.png" alt="difficulty distribution placeholder"
+            loading="lazy" />
+        </div>
+        <div class="distribution-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Difficulty</th>
+                <th>Count</th>
+                <th>Percent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Easy</td>
+                <td>6</td>
+                <td>33.3%</td>
+              </tr>
+              <tr>
+                <td>Medium</td>
+                <td>6</td>
+                <td>33.3%</td>
+              </tr>
+              <tr>
+                <td>Hard</td>
+                <td>6</td>
+                <td>33.3%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2024 Trivia Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
 </html>

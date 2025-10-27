@@ -24,8 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Keep sensible minimums but do not change document flow (no flex on body). */
   min-width: 320px;
   min-height: 100vh;
 }
