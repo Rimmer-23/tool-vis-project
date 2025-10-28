@@ -1,16 +1,79 @@
-# React + Vite
+# Trivia Visualization Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based data visualization application that fetches trivia questions from the Open Trivia Database API and presents interactive charts and filtering capabilities.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+- **API**: Open Trivia Database (https://opentdb.com)
+- **Questions**: 185+ questions from 6 categories
+- **Features**: Category list, distribution charts, difficulty breakdown, filtering
+- **Tech**: React functional components, Recharts library, clean UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+##  Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19.1.1** - Functional components with hooks
+- **Recharts 3.3.0** - Data visualization library
+- **Axios 1.8.4** - HTTP client for API requests
+- **Vite 7.1.7** - Build tool and dev server
+
+##  Features
+
+### 1. **Category Overview**
+- Grid layout with question counts
+- Clean card-based design
+
+### 2. **Interactive Bar Chart**
+- Visual representation of questions per category
+- Custom hover effects and responsive design
+
+### 3. **Difficulty Distribution Pie Chart**
+- Percentage breakdown of Easy/Medium/Hard questions
+- Color-coded segments with interactive tooltips
+
+### 4. **Smart Filtering**
+- Dropdown filter in header
+- Real-time chart updates
+- Only shows loaded categories
+
+### 5. **Loading & Error Handling**
+- Animated spinner during fetch
+- Sequential API calls to handle rate limits
+- Graceful error handling
+
+##  Project Structure
+
+```
+src/
+├── components/
+│   ├── Header.jsx                    # Navigation & filtering
+│   ├── MainSection.jsx               # Data orchestration
+│   └── main section components/
+│       ├── CategoriesListSection.jsx     # Category cards
+│       ├── CategoryDistributionSection.jsx   # Bar chart
+│       └── DifficultyDistributionSection.jsx # Pie chart
+├── pages/MainPage.jsx                # Main layout
+└── App.jsx                           # Root component
+```
+
+## 🔧 Key Technical Solutions
+
+- **Rate Limiting**: Sequential fetching with 5-second delays
+- **Data Processing**: HTML entity decoding for proper display
+- **Responsive Design**: Mobile-first CSS approach
+- **State Management**: Efficient React hooks usage
+
+## 🚀 Getting Started
+
+```bash
+# Clone and install
+git clone <repository-url>
+cd tool-vis-project
+npm install
+
+# Development
+npm run dev
+
+# Production build
+npm run build
+```
