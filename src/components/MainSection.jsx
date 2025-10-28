@@ -2,9 +2,8 @@ import axios from 'axios';
 import { CategoriesListSection } from "./main section components/CategoriesListSection";
 import { CategoriesDistributionSection } from "./main section components/CategoryDistributionSection";
 import { DifficultyDistributionSection } from "./main section components/DifficultyDistributionSection";
-
-import { useState, useEffect } from 'react';
 import { decode } from "he";
+import { useState, useEffect } from 'react';
 export function MainSection({ selectedCategory, questions, setQuestions }) {
     const [loading, setLoading] = useState(true);
 

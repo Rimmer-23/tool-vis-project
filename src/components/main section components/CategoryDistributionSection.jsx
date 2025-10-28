@@ -70,7 +70,7 @@ export function CategoriesDistributionSection({ questions = [] }) {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="category" hide />
                         <YAxis width="auto" />
-                        <Tooltip />
+                        <Tooltip content={<CustomTooltip />} />
                         <Legend />
                         <Bar dataKey="count" fill="#ff6b6b" activeBar={<Rectangle fill="lightcoral" stroke="darkred" />} />
                     </BarChart>
