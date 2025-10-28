@@ -4,7 +4,7 @@ export function Header({ selectedCategory, onCategoryChange, availableCategories
     return (
         <header>
             <div className="container">
-                <h1>Trivia Dashboard</h1>
+                <h1>Analytics Dashboard</h1>
 
                 <div className="filter-controls">
                     <label htmlFor="categoryFilter">Filter by category:</label>
