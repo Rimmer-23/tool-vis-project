@@ -79,7 +79,7 @@ export function CategoriesDistributionSection({ questions = [] }) {
                     <table>
                         <thead>
                             <tr>
-                                <th>category</th>
+                                <th>Category</th>
                                 <th>Count</th>
                                 <th>Percent</th>
                             </tr>

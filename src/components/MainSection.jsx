@@ -32,16 +32,16 @@ export function MainSection({ selectedCategory, questions, setQuestions }) {
                 let categoryName = `API ${i + 1}`; // Default name
                 
                 try {
-                    console.log(`⏳ Waiting 5 seconds before ${categoryName}...`);
+                    console.log(`Waiting 5 seconds before ${categoryName}...`);
                     await new Promise(resolve => setTimeout(resolve, 5000));
                     
-                    console.log(`🔄 Fetching from ${categoryName}...`);
+                    console.log(`Fetching from ${categoryName}...`);
                     const response = await axios.get(url);
                     
                     if (response.data.response_code === 0 && response.data.results && response.data.results.length > 0) {
                         // Extract category name from the first question
                         categoryName = response.data.results[0].category;
-                        console.log(`📊 Category detected: ${categoryName}`);
+                        console.log(`Category detected: ${categoryName}`);
                         
                         allResults.push(...response.data.results);
                         console.log(`✅ Successfully fetched ${response.data.results.length} questions from ${categoryName}`);
