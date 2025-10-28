@@ -56,14 +56,14 @@ src/
 └── App.jsx                           # Root component
 ```
 
-## 🔧 Key Technical Solutions
+## Key Technical Solutions
 
 - **Rate Limiting**: Sequential fetching with 5-second delays
 - **Data Processing**: HTML entity decoding for proper display
 - **Responsive Design**: Mobile-first CSS approach
 - **State Management**: Efficient React hooks usage
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # Clone and install
