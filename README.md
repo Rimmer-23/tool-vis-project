@@ -67,7 +67,7 @@ src/
 
 ```bash
 # Clone and install
-git clone <repository-url>
+git clone https://github.com/Rimmer-23/tool-vis-project.git
 cd tool-vis-project
 npm install
 
