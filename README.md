@@ -4,9 +4,9 @@ A React-based data visualization application that fetches trivia questions from 
 
 > **⚙️ Development Notice**
 >
-> This project is currently being upgraded on the `features` branch.  
+> This project is currently being upgraded on the `feature-branch` branch.  
 > Active work includes UI improvements and feature enhancements.  
-> Please refer to the `main` branch for the stable version.
+> Please refer to the `actual-project` branch for the stable version.
 
 
 - **API**: Open Trivia Database (https://opentdb.com)
