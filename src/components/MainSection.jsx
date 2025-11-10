@@ -146,7 +146,7 @@ export function MainSection({ selectedCategory, questions, setQuestions }) {
                     <CategoriesDistributionSection questions={filteredQuestions} />
 
                     {/* <!-- Difficulty Distribution Section --> */}
-                    <DifficultyDistributionSection questions={filteredQuestions} />
+                    <DifficultyDistributionSection questions={filteredQuestions} selectedCategory={selectedCategory} />
                 </>
             )}
         </main>
