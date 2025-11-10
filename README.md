@@ -2,6 +2,11 @@
 
 A React-based data visualization application that fetches trivia questions from the Open Trivia Database API and presents interactive charts and filtering capabilities.
 
+> **⚙️ Development Notice**
+>
+> This project is currently being upgraded on the `features` branch.  
+> Active work includes UI improvements and feature enhancements.  
+> Please refer to the `main` branch for the stable version.
 
 
 - **API**: Open Trivia Database (https://opentdb.com)
