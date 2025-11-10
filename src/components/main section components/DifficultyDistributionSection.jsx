@@ -1,9 +1,7 @@
 import { useMemo, useState } from 'react';
-import { decode } from 'he';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver';
 import './DifficultyDistributionSection.css';
+import { ExcelExportDifficulty } from '../functions/ExcelExportDifficulty';
 
 const RADIAN = Math.PI / 180;
 
@@ -88,50 +86,50 @@ export function DifficultyDistributionSection({ questions = [], selectedCategory
         setModal(!modal);
     };
 
-    // Export function for Excel download
-    const exportToExcel = () => {
-        const tableData = chartData.map(({ name, value, displayPercent }) => ({
-            Difficulty: name,
-            Count: value,
-            Percent: `${displayPercent}%`,
-        }));
+    // // Export function for Excel download
+    // const exportToExcel = () => {
+    //     const tableData = chartData.map(({ name, value, displayPercent }) => ({
+    //         Difficulty: name,
+    //         Count: value,
+    //         Percent: `${displayPercent}%`,
+    //     }));
 
-        tableData.push({
-            Difficulty: 'Total',
-            Count: questions.length,
-            Percent: '100%',
-        });
+    //     tableData.push({
+    //         Difficulty: 'Total',
+    //         Count: questions.length,
+    //         Percent: '100%',
+    //     });
 
-        // Convert the JSON data to an Excel sheet
-        const ws = XLSX.utils.json_to_sheet(tableData);
+    //     // Convert the JSON data to an Excel sheet
+    //     const ws = XLSX.utils.json_to_sheet(tableData);
 
-        // Create a new workbook and append the sheet
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    //     // Create a new workbook and append the sheet
+    //     const wb = XLSX.utils.book_new();
+    //     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
-        // Write the workbook to an array and create a Blob from the data
-        const excelFile = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-        const blob = new Blob([excelFile], { type: 'application/octet-stream' });
+    //     // Write the workbook to an array and create a Blob from the data
+    //     const excelFile = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    //     const blob = new Blob([excelFile], { type: 'application/octet-stream' });
 
-        // Trigger the download of the Excel file
-        // Derive a safe file name using the selected category (topic)
-        try {
-            const rawTopic = selectedCategory ? decode(selectedCategory) : 'all';
-            // replace whitespace with underscores and remove unsafe chars
-            const safeTopic = rawTopic
-                .toString()
-                .trim()
-                .replace(/\s+/g, '_')
-                .replace(/[^a-zA-Z0-9_-]/g, '')
-                .toLowerCase() || 'all';
+    //     // Trigger the download of the Excel file
+    //     // Derive a safe file name using the selected category (topic)
+    //     try {
+    //         const rawTopic = selectedCategory ? decode(selectedCategory) : 'all';
+    //         // replace whitespace with underscores and remove unsafe chars
+    //         const safeTopic = rawTopic
+    //             .toString()
+    //             .trim()
+    //             .replace(/\s+/g, '_')
+    //             .replace(/[^a-zA-Z0-9_-]/g, '')
+    //             .toLowerCase() || 'all';
 
-            const filename = `difficulty_distribution_${safeTopic}.xlsx`;
-            saveAs(blob, filename);
-        } catch {
-            // Fallback to default name if something goes wrong
-            saveAs(blob, 'difficulty_distribution.xlsx');
-        }
-    };
+    //         const filename = `difficulty_distribution_${safeTopic}.xlsx`;
+    //         saveAs(blob, filename);
+    //     } catch {
+    //         // Fallback to default name if something goes wrong
+    //         saveAs(blob, 'difficulty_distribution.xlsx');
+    //     }
+    // };
 
     return (
         <section className="distribution-section">
@@ -230,10 +228,7 @@ export function DifficultyDistributionSection({ questions = [], selectedCategory
                         </tbody>
                     </table>
 
-                    {/* Button to trigger Excel download */}
-                    <button onClick={exportToExcel} className="btn-export">
-                        Download as Excel
-                    </button>
+                    <ExcelExportDifficulty chartData ={chartData} questions={questions} selectedCategory={selectedCategory}/>
                 </div>
             </div>
         </section>
