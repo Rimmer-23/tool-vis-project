@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { decode } from "he";
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, Cell, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { ExcelExportCategory } from '../functions/ExcelExportCategory';
 
 
@@ -74,7 +74,14 @@ export function CategoriesDistributionSection({ questions = [], selectedCategory
                         <YAxis width="auto" />
                         <Tooltip content={<CustomTooltip />} />
                         <Legend />
-                        <Bar dataKey="count" fill="#ff6b6b" activeBar={<Rectangle fill="lightcoral" stroke="darkred" />} />
+                        <Bar dataKey="count" activeBar={<Rectangle fill="lightcoral" stroke="darkred" />}>
+                            {chartData.map((entry, index) => (
+                                <Cell
+                                    key={`cell-${index}`}
+                                    fill={`hsl(${Math.round((index * 130) / chartData.length)}, 70%, 50%)`}
+                                />
+                            ))}
+                        </Bar>
                     </BarChart>
                 </div>
                 <div className="distribution-table">
