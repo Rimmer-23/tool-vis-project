@@ -58,7 +58,7 @@ export function MainSection({ selectedCategory, questions, setQuestions }) {
         };
 
         fetchAllQuestions();
-    },[]);
+    },[setQuestions]);
 
     return (
         <main>
@@ -143,7 +143,7 @@ export function MainSection({ selectedCategory, questions, setQuestions }) {
                     <CategoriesListSection questions={filteredQuestions} />
 
                     {/* <!-- Category Distribution Section --> */}
-                    <CategoriesDistributionSection questions={filteredQuestions} />
+                    <CategoriesDistributionSection questions={filteredQuestions} selectedCategory={selectedCategory} />
 
                     {/* <!-- Difficulty Distribution Section --> */}
                     <DifficultyDistributionSection questions={filteredQuestions} selectedCategory={selectedCategory} />
