@@ -1,6 +1,7 @@
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { decode } from "he";
+import './ExcelExportCategory.css'
 
 export function ExcelExportCategory({chartData = [], selectedCategory, questions = []}) {
 
